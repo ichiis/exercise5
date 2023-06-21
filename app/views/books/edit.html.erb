@@ -1,4 +1,5 @@
-<h1>Editing Book</h1>
+<div class="ml-5 mb-5 mt-2">
+  <h1>Editing Book</h1>
 <% if @book.errors.any? %>
   <%= @book.errors.count %>errors prohibited this obj form being saved:
   <ul>
@@ -8,15 +9,16 @@
   </ul>
 <% end %>
 <%= form_with model: @book do |f| %>
-<p>Title</p>
-  <%= f.text_field :title %>
-<p>Opinion</p>
+<p class="mb-1">Title</p>
+  <%= f.text_field :title, class:'mb-3' %>
+<p class="mb-1">Opinion</p>
   <%= f.text_area :body %><br>
-  <%= f.submit "Update User" %>
+  <%= f.submit "Update User", class:'btn btn-success my-2' %>
 <% end %>
 
 <div class="d-flex">
   <p><%= link_to "Show", book_path(@book.id) %></p>
-  <p>|</p>
+  <p class="px-1">|</p>
   <p><%= link_to "Back", books_path %></p>
+</div>
 </div>
