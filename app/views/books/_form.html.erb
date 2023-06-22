@@ -1,0 +1,11 @@
+       <div class="mt-3">
+         <h3>New book</h3>
+           <%= form_with model: book_new do |f| %>
+           <p class="m-0">Title</p>
+           <%= f.text_field :title, class:'w-100' %>
+           <p class="mt-3 mb-0">Opinion</p>
+           <%= f.text_area :body, class:'w-100' %><br>
+           <%= f.submit 'Create Book', class:'btn btn-success my-2' %>
+           <% end %>
+       </div>
+      
