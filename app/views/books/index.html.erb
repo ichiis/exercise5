@@ -30,7 +30,7 @@
          <% @books.each do |book| %>
           <tbody>
             <tr class="border-top">
-              <td class=" py-2 w-25"><%= link_to user_path(@user.id) do %><%= image_tag book.user.get_profile_image(100,100) %><% end %></td>
+              <td class=" py-2 w-25"><%= link_to user_path(book.user_id) do %><%= image_tag book.user.get_profile_image(100,100) %><% end %></td>
               <td class=" align-top pt-2"><%= link_to book.title, book_path(book.id) %></td>
               <td class=" align-top pt-2"><%= book.body %></td>
             </tr>
