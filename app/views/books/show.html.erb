@@ -2,8 +2,22 @@
   <div class="row">
     <div class="col-md-3">
       <div class="pl-3">
-        <!--user info, new book-->
-      <%= render 'users/info', user: @book.user %>     
+        <h2>User info</h2>
+           <%= image_tag @book.user.get_profile_image(120, 120) %>
+           <table class="w-100 mb-5">
+             <thead>
+                <tr class="border-top">
+                  <th class="p-3">name</th>
+                  <th><%= @book.user.name %></th>
+                </tr>
+               <tr class="border-top">
+                 <th class="p-3">intruduction</th>
+                 <th><%= @book.user.introduction %></th>
+               </tr>
+            </thead>
+          </table>
+      <%= link_to edit_user_path(@book.user_id), class:'btn btn-outline-secondary btn-block' do %><i class="fas fa-user-cog"></i><% end %>
+      <!--new book-->
       <%= render 'form', book_new: @book_new %>     
       </div>
     </div>
